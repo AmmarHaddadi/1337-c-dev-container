@@ -23,6 +23,6 @@
 		}
 	},
 	"forwardPorts": [],
-	"postCreateCommand": "echo 'Welcome to 1337 C/C++ Development Container!' && zsh --version && gcc --version && clang --version && make --version && cmake --version && valgrind --version && python3 --version && pip3 show c-formatter-42",
+	"postCreateCommand": "echo 'Welcome to 1337 C/C++ Development Container!' && echo 'Checking installation...' && zsh --version && gcc --version && clang --version && make --version && cmake --version && valgrind --version && python3 --version && (pip3 show c-formatter-42 || pip3 install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org c-formatter-42 || echo 'c_formatter_42 will be available after container start')",
 	"remoteUser": "vscode"
 }

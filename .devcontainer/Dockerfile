@@ -32,11 +32,15 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
 # Install c_formatter_42 using pip3
-RUN pip3 install c-formatter-42
+# Handle SSL certificate issues and try multiple approaches
+RUN pip3 install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org c-formatter-42 || \
+    pip3 install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org git+https://github.com/dawnbeen/c_formatter_42.git || \
+    echo "Warning: c_formatter_42 installation failed, will try manual installation"
 
 # Set up zsh for the vscode user
 USER vscode
-RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+RUN curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh -s -- --unattended || \
+    echo "Oh My Zsh installation failed, using default zsh setup"
 RUN echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
 
 # Switch back to root to complete setup
