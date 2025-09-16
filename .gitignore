@@ -6,6 +6,8 @@
 *.exe
 *.out
 a.out
+hello_1337
+memory_demo
 
 # Libraries
 *.lib
