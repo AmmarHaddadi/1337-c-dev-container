@@ -10,13 +10,10 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"ms-vscode.cpptools",
-				"ms-vscode.cpptools-extension-pack"
+				"ms-vscode.cpptools"
 			],
 			"settings": {
 				"terminal.integrated.defaultProfile.linux": "zsh",
-				"C_Cpp.default.cppStandard": "c++17",
-				"C_Cpp.default.cStandard": "c11",
 				"C_Cpp.default.compilerPath": "/usr/bin/gcc",
 				"C_Cpp.default.intelliSenseMode": "linux-gcc-x64"
 			}
