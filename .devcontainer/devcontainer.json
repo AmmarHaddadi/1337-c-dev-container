@@ -1,0 +1,25 @@
+{
+	"name": "1337 C/C++ Development Container",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/git:1": {},
+		"ghcr.io/devcontainers/features/github-cli:1": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-vscode.cpptools"
+			],
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "zsh",
+				"C_Cpp.default.compilerPath": "/usr/bin/gcc",
+				"C_Cpp.default.intelliSenseMode": "linux-gcc-x64"
+			}
+		}
+	},
+	"forwardPorts": [],
+	"postCreateCommand": "echo 'Welcome to 1337 C/C++ Development Container!' && echo 'Checking installation...' && zsh --version && gcc --version && clang --version && make --version && cmake --version && valgrind --version && python3 --version && (pip3 show c-formatter-42 || pip3 install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org c-formatter-42 || echo 'c_formatter_42 will be available after container start')",
+	"remoteUser": "vscode"
+}

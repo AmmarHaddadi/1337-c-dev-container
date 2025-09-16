@@ -1,0 +1,74 @@
+# Compiled Object files
+*.o
+*.obj
+
+# Executables
+*.exe
+*.out
+a.out
+hello_1337
+memory_demo
+
+# Libraries
+*.lib
+*.a
+*.so
+*.so.*
+*.dylib
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Static analysis
+*.gcno
+*.gcda
+*.gcov
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+# Only ignore CMake-generated Makefiles in build directories
+build/Makefile
+*/build/Makefile
+*.cmake
+!CMakeLists.txt
+
+# Build directories
+build/
+dist/
+Debug/
+Release/
+
+# IDE files
+.vscode/settings.json
+.vscode/launch.json
+.vscode/tasks.json
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+.tmp/
+.temp/
+
+# Log files
+*.log
+
+# Core dumps
+core
+core.*
